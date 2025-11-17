@@ -1,0 +1,5 @@
+[
+  { "id_pregunta": 1, "area": "Operaciones", "texto_pregunta": "¿Cuánto tiempo dedican a tareas manuales repetitivas?", "tipo_respuesta": "escala", "orden": 1, "peso_area": 1.2 },
+  { "id_pregunta": 2, "area": "Marketing y Ventas", "texto_pregunta": "¿Gestionan leads con un sistema automatizado?", "tipo_respuesta": "multiple", "orden": 2, "peso_area": 1.0 },
+  { "id_pregunta": 3, "area": "Sistemas / Madurez Digital", "texto_pregunta": "Nivel de integración entre sistemas clave", "tipo_respuesta": "escala", "orden": 3, "peso_area": 1.1 }
+]

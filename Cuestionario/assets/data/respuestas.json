@@ -1,0 +1,5 @@
+[
+  { "id_pregunta": 2, "id_respuesta": 201, "texto_opcion": "Sí, completamente", "peso_puntuacion": 40 },
+  { "id_pregunta": 2, "id_respuesta": 202, "texto_opcion": "Parcialmente", "peso_puntuacion": 20 },
+  { "id_pregunta": 2, "id_respuesta": 203, "texto_opcion": "No", "peso_puntuacion": 0 }
+]
