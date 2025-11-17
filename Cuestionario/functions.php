@@ -106,9 +106,14 @@ function calcularScore($respuestas) {
 // Wrappers que obtienen pregunta/respuesta desde Airtable o desde archivos locales
 function get_pregunta_by_id($id_pregunta) {
     $use_airtable = function_exists('airtable_is_configured') && airtable_is_configured();
-    if ($use_airtable) {
-        $rec = airtable_get_pregunta_by_id($id_pregunta);
-        return $rec && isset($rec['fields']) ? $rec['fields'] : null;
+    if ($use_airtable && function_exists('airtable_get_pregunta_by_id')) {
+        try {
+            $rec = airtable_get_pregunta_by_id($id_pregunta);
+            if (is_array($rec) && isset($rec['fields']) && is_array($rec['fields'])) {
+                return $rec['fields'];
+            }
+        } catch (\Throwable $e) {
+        }
     }
     $preguntas = cargarPreguntasLocal();
     foreach ($preguntas as $p) {
@@ -119,9 +124,14 @@ function get_pregunta_by_id($id_pregunta) {
 
 function get_respuesta_by_id($id_respuesta) {
     $use_airtable = function_exists('airtable_is_configured') && airtable_is_configured();
-    if ($use_airtable) {
-        $rec = airtable_get_respuesta_by_id($id_respuesta);
-        return $rec && isset($rec['fields']) ? $rec['fields'] : null;
+    if ($use_airtable && function_exists('airtable_get_respuesta_by_id')) {
+        try {
+            $rec = airtable_get_respuesta_by_id($id_respuesta);
+            if (is_array($rec) && isset($rec['fields']) && is_array($rec['fields'])) {
+                return $rec['fields'];
+            }
+        } catch (\Throwable $e) {
+        }
     }
     $respuestas = cargarRespuestasLocal();
     foreach ($respuestas as $r) {
